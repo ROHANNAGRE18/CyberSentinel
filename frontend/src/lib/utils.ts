@@ -118,7 +118,7 @@ export function summariseChecks(checks: CheckResult[]): CheckSummary {
   const summary: CheckSummary = { pass: 0, warn: 0, fail: 0, info: 0, total: checks.length };
   for (const c of checks) {
     if (c.status in summary) {
-      (summary as Record<string, number>)[c.status]++;
+      (summary as unknown as Record<string, number>)[c.status]++;
     }
   }
   return summary;
