@@ -1,0 +1,18 @@
+Alembic database migrations for CyberSentinel.
+
+Common commands (run from the backend/ directory):
+
+  # Create a new migration after changing models
+  alembic revision --autogenerate -m "describe your change"
+
+  # Apply all pending migrations
+  alembic upgrade head
+
+  # Roll back one migration
+  alembic downgrade -1
+
+  # Show current migration state
+  alembic current
+
+Note: For development, the app auto-creates tables on startup via init_db.py.
+Alembic is used for incremental schema changes in staging/production.

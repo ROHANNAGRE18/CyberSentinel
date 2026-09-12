@@ -1,0 +1,70 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# CyberSentinel — root .gitignore
+# Covers: backend (Python/FastAPI) + frontend (Next.js/Node)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ── Backend: Python virtual environment ──────────────────────────────────────
+backend/venv/
+backend/.venv/
+backend/env/
+
+
+# ── Backend: Python bytecode ──────────────────────────────────────────────────
+**/__pycache__/
+*.py[cod]
+*.pyo
+
+
+# ── Backend: test / coverage artifacts ────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+
+# ── Backend: local SQLite databases ───────────────────────────────────────────
+# Scan history and results must not be committed.
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ── Backend: distribution / build ────────────────────────────────────────────
+*.egg-info/
+dist/
+build/
+
+
+# ── Frontend: dependencies ────────────────────────────────────────────────────
+frontend/node_modules/
+
+
+# ── Frontend: Next.js build output ───────────────────────────────────────────
+frontend/.next/
+frontend/out/
+
+
+# ── Frontend: Next.js auto-generated type file ───────────────────────────────
+# Regenerated automatically by Next.js on every `next dev` / `next build`.
+frontend/next-env.d.ts
+
+
+# ── Environment variable files ────────────────────────────────────────────────
+# Real secrets must never reach the repository.
+# .env.example files (checked in for documentation) are intentionally excluded
+# from these rules — a plain .env.example with no real values is safe to commit.
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+
+# ── OS and editor noise ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo

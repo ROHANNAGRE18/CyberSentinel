@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Focus ring consistent across all interactive elements */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-slate-950;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+@layer components {
+  /* ── Card base ──────────────────────────────────────────────── */
+  .card {
+    @apply bg-slate-900 border border-slate-800 rounded-xl p-6;
+  }
+
+  .card-hover {
+    @apply card transition-colors hover:border-slate-700;
+  }
+
+  /* ── Button variants ────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-brand-600 hover:bg-brand-500 active:bg-brand-700
+           text-white font-semibold text-sm
+           px-5 py-2.5 rounded-lg
+           transition-colors duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-slate-800 hover:bg-slate-700 active:bg-slate-600
+           text-slate-200 font-medium text-sm
+           px-5 py-2.5 rounded-lg border border-slate-700
+           transition-colors duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* ── Input ──────────────────────────────────────────────────── */
+  .input {
+    @apply w-full bg-slate-800 border border-slate-700
+           text-slate-100 placeholder:text-slate-500
+           rounded-lg px-4 py-2.5 text-sm
+           transition-colors duration-150
+           focus:border-brand-500 focus:bg-slate-800;
+  }
+
+  /* ── Badge ──────────────────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center gap-1
+           text-xs font-medium px-2.5 py-0.5
+           rounded-full border;
+  }
+
+  /* ── Section heading ────────────────────────────────────────── */
+  .section-title {
+    @apply text-lg font-semibold text-slate-100 mb-4;
+  }
+}
